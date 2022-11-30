@@ -26,15 +26,16 @@ class ProjectsController extends Controller
         $projects = $this->model->get();
         return view('projects.index',compact('projects'));
     }
-
+ 
     /**
      * [store description]
      * @return [type] [description]
      */
     public function store(){
         // validate
+        $attributes = request()->validate(['title'=>'required','description'=>'required']);
         // persist
-        $this->model->create(request(['title','description']));
+        $this->model->create($attributes);
         // redirect
         return redirect('/projects');
     }
