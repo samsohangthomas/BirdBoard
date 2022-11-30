@@ -39,6 +39,15 @@ class ProjectsController extends Controller
         // redirect
         return redirect('/projects');
     }
+    
+    /**
+     * [show description]
+     * @param  Project $project [description]
+     * @return [type]           [description]
+     */
+    public function show(Project $project){
+        return view('projects.show',compact('project'));
+    }
 
   
 }

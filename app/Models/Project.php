@@ -10,4 +10,12 @@ class Project extends Model
     use HasFactory;
 
     protected $guarded =  [];
+
+    /**
+     * [path description]
+     * @return [type] [description]
+     */
+    public function  path(){
+        return  "/projects/{$this->id}";
+    }
 }
